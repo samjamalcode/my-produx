@@ -16,6 +16,62 @@
 </head>
 
 <body>
+    <!-- Main container with the class "crud" -->
+    <div class="crud">
+        <div class="head">
+            <h2 >Produx</h2>
+            <p>Item Supervision System</p>
+        </div>
+        <!-- Input section for data entry -->
+        <div class="inputs">
+            <!-- Input fields for title, price, taxes, ads, discount -->
+            <input type="text" placeholder="title" id="title">
+            <div class="price">
+                <input type="number" placeholder="price" id="price">
+                <input type="number" placeholder="taxes" id="taxes">
+                <input type="number" placeholder="ads" id="ads">
+                <input type="number" placeholder="discount" id="discount">
+                <small id="total"></small>
+            </div>
+            <!-- Input field for count and category, and a button to submit data -->
+            <input type="number" placeholder="count" id="count">
+            <input type="text" placeholder="category" id="category">
+            <button id="submit">Create</button>
+        </div>
+        <!-- Output section for displaying data -->
+        <div class="outputs">
+            <!-- Search block with input field and buttons for search -->
+            <div class="searchBlock">
+                <input type="text" placeholder="Search" id="search">
+                <div class="btnSearch">
+                    <button id="searchTitle">Search By Title</button>
+                    <button id="searchCategory">Search By Category</button>
+                </div>
+            </div>
+        </div>
+        <!-- Placeholder for displaying a message when all data is deleted -->
+        <div id="deleteAll"></div>
+        <table>
+           <tr>
+            <!-- Table header columns -->
+               <th>id</th>
+               <th>title</th>
+               <th>price</th>
+               <th>taxes</th>
+               <th>ads</th>
+               <th>discount</th>
+               <th>total</th>
+               <th>category</th>
+               <th>update</th>
+               <th>delete</th>
+           </tr>
+           <!-- Table body for displaying dynamic data (commented out for now) -->
+           <tbody id="tbody">
+            <!-- Table content will be implemented in JavaScript -->  
+           </tbody>
+        </table>
+     </div>
+
 
 </body>
 
