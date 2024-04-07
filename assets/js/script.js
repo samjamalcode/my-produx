@@ -143,7 +143,11 @@ function deleteData(i) {
     category.value = dataPro[i].category;
     submit.innerHTML = "Update";
     mood = "update";
+
+    // Add the variable 'tmp' to make the index variable (i) global
     tmp = i;
+
+    // Scroll to the top smoothly when updating data
     scroll({
       top: 0,
       behavior: "smooth",
