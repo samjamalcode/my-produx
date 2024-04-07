@@ -33,3 +33,87 @@ if (localStorage.product != null) {
   dataPro = [];
 }
 
+// Submit button click event handler
+// This function create a new object (collect data and store it in 'dataPro' array)
+submit.onclick = function () {
+    let newPro = {
+      title: title.value.toLowerCase(),
+      price: price.value,
+      taxes: taxes.value,
+      ads: ads.value,
+      discount: discount.value,
+      total: total.innerHTML,
+      count: count.value,
+      category: category.value.toLowerCase(),
+    }
+  
+    if(title.value != '' 
+    && price.value != '' 
+    && category.value != ''
+    && newPro.count < 100) {
+      if (mood === "create") {
+      if (newPro.count > 1) {
+        for (let i = 0; i < newPro.count; i++) {
+          dataPro.push(newPro);
+        }
+      } else {
+        dataPro.push(newPro);
+      }
+    } else {
+      dataPro[tmp] = newPro;
+      mood = "create";
+      submit.innerHTML = "Create";
+      count.style.display = "block";
+    }
+    clearData();
+  }
+    localStorage.setItem("product", JSON.stringify(dataPro));
+    showData();
+  };
+  
+  // Function to clear input fields when we clicking create button
+  function clearData() {
+    title.value = "";
+    price.value = "";
+    taxes.value = "";
+    ads.value = "";
+    discount.value = "";
+    total.innerHTML = "";
+    count.value = "";
+    category.value = "";
+  }
+ 
+  // Function to display data on HTML table
+  function showData() {
+    getTotal();
+    let table = "";
+    for (let i = 0; i < dataPro.length; i++) {
+      table += `
+              <tr>
+                     <td>${i+1}</td>
+                     <td>${dataPro[i].title}</td>
+                     <td>${dataPro[i].price}</td>
+                     <td>${dataPro[i].taxes}</td>
+                     <td>${dataPro[i].ads}</td>
+                     <td>${dataPro[i].discount}</td>
+                     <td>${dataPro[i].total}</td>
+                     <td>${dataPro[i].category}</td>
+                     <td><button onclick="updateData(${i})" id="update">update</button></td>
+                     <td><button onclick="deleteData( ${i})" id="delete">delete</button></td>
+              </tr>
+          `;
+    }
+    document.getElementById("tbody").innerHTML = table;
+    let btnDelete = document.getElementById("deleteAll");
+    if (dataPro.length > 0) {
+      btnDelete.innerHTML = `
+          <button onclick="deleteAll()">Delete All (${dataPro.length})</button>
+          `;
+    } else {
+      btnDelete.innerHTML = "";
+    }
+  }
+  
+  // Keep this function global to make sure the data on table always visible
+  showData();
+
