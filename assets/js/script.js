@@ -131,3 +131,22 @@ function deleteData(i) {
     showData();
   }
 
+  // Function to update data
+  function updateData(i) {
+    title.value = dataPro[i].title;
+    price.value = dataPro[i].price;
+    taxes.value = dataPro[i].taxes;
+    ads.value = dataPro[i].ads;
+    discount.value = dataPro[i].discount;
+    getTotal();
+    count.style.display = "none";
+    category.value = dataPro[i].category;
+    submit.innerHTML = "Update";
+    mood = "update";
+    tmp = i;
+    scroll({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
