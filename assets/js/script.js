@@ -9,6 +9,10 @@ let count = document.getElementById("count");
 let category = document.getElementById("category");
 let submit = document.getElementById("submit");
 
+// Initialize variables
+let mood = "create";
+let tmp;
+
 // Function for calculating total
 function getTotal() {
     if (price.value != 0) {
@@ -20,3 +24,12 @@ function getTotal() {
       total.style.backgroundColor = "#db1d0f";
     }
   }
+
+  // Load data from localStorage
+  let dataPro;
+if (localStorage.product != null) {
+  dataPro = JSON.parse(localStorage.product);
+} else {
+  dataPro = [];
+}
+
