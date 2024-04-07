@@ -29,10 +29,10 @@
             <!-- Input fields for title, price, taxes, ads, discount -->
             <input type="text" placeholder="title" id="title">
             <div class="price">
-                <input type="number" placeholder="price" id="price">
-                <input type="number" placeholder="taxes" id="taxes">
-                <input type="number" placeholder="ads" id="ads">
-                <input type="number" placeholder="discount" id="discount">
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+                <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
                 <small id="total"></small>
             </div>
             <!-- Input field for count and category, and a button to submit data -->
