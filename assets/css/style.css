@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: system-ui;
+}
+
+.crud {
+    width: 80%;
+    margin: auto;
+}
+
+.head {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Form Styles */
+input {
+    width: 100%;   
+    height: 30px;
+    padding: 4px;
+    margin: 4px 0;
+    border: none;
+    outline: none;
+    background-color: #111;
+    color: #fff;
+    border-radius: 5px;
+}
+
+input:focus {
+    transform: scale(1.1);
+    background-color: #000;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price input {
+    width: 20%;
+    display: flex;
+}
+
+/* Button Styles */
+#total {
+    background-color: #970f06;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#total:hover {
+    background-color: #db1d0f;
+}
+
+#total::before {
+    content: 'Total: ';
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #0078ff;
+    color: #fff;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background-color: #5f00ad;
+    letter-spacing: 1px;
+}
+
+/* Search Button Styles */
+.btnSearch {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnSearch button {
+    width: 45%;
+}
+
+#deleteAll {
+    margin: 20px 0;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+table th {
+    text-transform: uppercase;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: #111;
+}
+
+/* Footer styles */
+footer {
+    background-color: #004fa8;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Ensure footer takes up full width of viewport */
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    margin: 0 80px;
+}
+
+/* Media query: /*
+/* (phones, 576px and up) */
+@media (max-width: 800px){
+    footer {
+        font-size: 1.4rem;
+    }
+
+    .social-media {
+        margin-top: 10px;
+    }
+
+    .social-media a {
+        margin: 0 30px;
+    }
+
+
+    th,
+    td {
+        font-size: 0.7rem; /* Reduce font size for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    th:nth-child(4), /* Taxes */
+    th:nth-child(5), /* Ads */
+    th:nth-child(6), /* Discount */
+    th:nth-child(8) { /* Category */
+        display: none; /* Hide specified th elements */
+    }
+
+    td:nth-child(4), /* Taxes */
+    td:nth-child(5), /* Ads */
+    td:nth-child(6), /* Discount */
+    td:nth-child(8) { /* Category */
+        display: none; /* Hide corresponding td elements */
+    }
+
+    
+}
+
+/* Larger devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px){
+    footer {
+        font-size: 2rem;
+    } 
+   
+    th,
+    td {
+        font-size: 0.7rem; /* Reduce font size for smaller screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    } 
+    
+    th:nth-child(4), /* Taxes */
+    th:nth-child(5), /* Ads */
+    th:nth-child(6), /* Discount */
+    th:nth-child(8) { /* Category */
+        display: none; /* Hide specified th elements */
+    }
+
+    td:nth-child(4), /* Taxes */
+    td:nth-child(5), /* Ads */
+    td:nth-child(6), /* Discount */
+    td:nth-child(8) { /* Category */
+        display: none; /* Hide corresponding td elements */
+    }
+    
+}
