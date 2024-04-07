@@ -201,3 +201,55 @@ footer {
     }
     
 }
+
+
+                                                       /* 404 error page */
+main {
+    text-align: center;
+}
+
+/* Adding background image */
+#error-bg {
+    margin-top: 20px;
+    background-image: url(/assets/images/logo.png);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Heading */
+#heading-error {
+    font-size: 2em;
+    color: #fff;
+}
+
+/* Paragraph */
+#paragraph-error {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Link */
+#paragraph-error a {
+    color: #ff0400;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+#paragraph-error a:hover {
+    text-decoration: underline;
+}
+
+/* Media query:*/
+/*(phones, 576px and up) */
+@media (max-width: 576px) {
+    #heading-error {
+        font-size: 1.2em;
+    }
+
+    #paragraph-error {
+        font-size: 0.8em;
+    }
+}
