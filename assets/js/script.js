@@ -47,6 +47,7 @@ submit.onclick = function () {
       category: category.value.toLowerCase(),
     }
   
+    // Prevent user to leave fields empty
     if(title.value != '' 
     && price.value != '' 
     && category.value != ''
